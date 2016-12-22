@@ -1,0 +1,13 @@
+{
+  "env": {
+    "browser": true
+  },
+  "extends": "airbnb",
+  "rules": {
+    "arrow-body-style": 0,
+    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    "class-methods-use-this": 0,
+    "semi": ["error", "never"],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+  }
+}
