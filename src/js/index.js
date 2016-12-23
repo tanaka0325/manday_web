@@ -1,9 +1,9 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-import Poem from './containers/PoemContainer'
+import App from './App'
 
 render(
-  <Poem />,
+  <App />,
   document.getElementById('content'),
 )
