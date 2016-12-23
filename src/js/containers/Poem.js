@@ -6,7 +6,7 @@ import PoemActions from '../actions/PoemActions'
 import PoemForm from '../components/PoemForm'
 import PoemList from '../components/PoemList'
 
-const PoemView = () => (
+const Poem = () => (
   <div>
     <AltContainer stores={{ store: PoemStore }} actions={{ actions: PoemActions }}>
       <PoemForm />
@@ -15,4 +15,4 @@ const PoemView = () => (
   </div>
 )
 
-export default PoemView
+export default Poem
