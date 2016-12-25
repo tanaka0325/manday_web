@@ -3,7 +3,8 @@ import alt from '../alt'
 class PoemActions {
   constructor() {
     this.generateActions(
-      'addPoem',
+      'sync',
+      'fetchedPoems',
     )
   }
 }
