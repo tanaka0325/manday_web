@@ -19,6 +19,10 @@ class PoemStore {
     this.poems = poems
   }
 
+  onAddedPoem(poem) {
+    this.poems.push(poem)
+  }
+
 }
 
 export default alt.createStore(PoemStore, 'PoemStore')
