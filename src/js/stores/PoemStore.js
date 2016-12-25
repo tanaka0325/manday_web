@@ -15,6 +15,7 @@ class PoemStore {
   }
 
   onFetchedPoems(poems) {
+    this.loading = false
     this.poems = poems
   }
 
