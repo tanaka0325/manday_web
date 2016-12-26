@@ -1,10 +1,14 @@
 import React from 'react'
 
 import Poem from './containers/Poem'
+import Task from './containers/Task'
 
 const App = () => {
   return (
-    <Poem />
+    <div>
+      <Poem />
+      <Task />
+    </div>
   )
 }
 
