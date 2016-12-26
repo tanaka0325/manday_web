@@ -5,6 +5,7 @@ const PoemForm = (props) => {
 
   return (
     <div>
+      <h2>poem form</h2>
       <form
         onSubmit={(e) => {
           e.preventDefault()
@@ -25,6 +26,7 @@ const PoemForm = (props) => {
             input = node
           }}
         />
+        <button type="submit">post</button>
       </form>
     </div>
   )

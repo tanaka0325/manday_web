@@ -10,11 +10,8 @@ const PoemSource = {
       .get(API_URL)
       .withCredentials()
       .end((err, res) => {
-        if (err) {
-          console.log(err)
-        } else {
-          PoemAction.fetchedPoems(res.body)
-        }
+        if (err) { console.log(err) }
+        PoemAction.fetchedPoems(res.body)
       })
   },
 
@@ -24,11 +21,18 @@ const PoemSource = {
       .withCredentials()
       .send(poem)
       .end((err, res) => {
-        if (err) {
-          console.log(err)
-        } else {
-          PoemAction.addedPoem(res.body)
-        }
+        if (err) { console.log(err) }
+        PoemAction.addedPoem(res.body)
+      })
+  },
+
+  delete: (id) => {
+    request
+      .delete(`${API_URL}/${id}`)
+      .withCredentials()
+      .end((err) => {
+        if (err) { console.log(err) }
+        PoemAction.sync()
       })
   },
 }

@@ -13,6 +13,10 @@ class PoemActions {
   addPoem(poem) {
     PoemSource.add(poem)
   }
+
+  deletePoem(id) {
+    PoemSource.delete(id)
+  }
 }
 
 export default alt.createActions(PoemActions)

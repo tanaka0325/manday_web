@@ -22,7 +22,6 @@ class PoemStore {
   onAddedPoem(poem) {
     this.poems.push(poem)
   }
-
 }
 
 export default alt.createStore(PoemStore, 'PoemStore')
