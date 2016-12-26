@@ -4,8 +4,8 @@ import TaskAction from '../actions/TaskActions'
 const API_URL = 'http://localhost:9999/tasks'
 
 const TaskSource = {
-  fetch: () => {
-    Api.ajaxGet(API_URL)
+  fetchAt: (date) => {
+    Api.ajaxGet(`${API_URL}/date/${date}`)
       .then(TaskAction.fetchedTasks)
   },
 

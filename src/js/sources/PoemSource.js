@@ -4,8 +4,8 @@ import PoemAction from '../actions/PoemActions'
 const API_URL = 'http://localhost:9999/poems'
 
 const PoemSource = {
-  fetch: () => {
-    Api.ajaxGet(API_URL)
+  fetchAt: (date) => {
+    Api.ajaxGet(`${API_URL}/date/${date}`)
       .then(PoemAction.fetchedPoems)
   },
 

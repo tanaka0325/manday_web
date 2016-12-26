@@ -9,9 +9,9 @@ class TaskStore {
     this.loading = false
   }
 
-  onSync() {
+  onSync(date) {
     this.loading = true
-    TaskSource.fetch()
+    TaskSource.fetchAt(date)
   }
 
   onFetchedTasks(tasks) {

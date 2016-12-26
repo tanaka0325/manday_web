@@ -9,9 +9,9 @@ class PoemStore {
     this.loading = false
   }
 
-  onSync() {
+  onSync(date) {
     this.loading = true
-    PoemSource.fetch()
+    PoemSource.fetchAt(date)
   }
 
   onFetchedPoems(poems) {

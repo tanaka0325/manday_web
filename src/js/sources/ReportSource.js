@@ -4,8 +4,8 @@ import ReportAction from '../actions/ReportActions'
 const API_URL = 'http://localhost:9999/reports'
 
 const ReportSource = {
-  fetch: () => {
-    Api.ajaxGet(API_URL)
+  fetchAt: (date) => {
+    Api.ajaxGet(`${API_URL}/date/${date}`)
       .then(ReportAction.fetchedReports)
   },
 

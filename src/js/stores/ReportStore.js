@@ -9,9 +9,9 @@ class ReportStore {
     this.loading = false
   }
 
-  onSync() {
+  onSync(date) {
     this.loading = true
-    ReportSource.fetch()
+    ReportSource.fetchAt(date)
   }
 
   onFetchedReports(reports) {
