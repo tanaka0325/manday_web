@@ -16,7 +16,6 @@ const TaskSource = {
 
   delete: (id) => {
     Api.ajaxDelete(`${API_URL}/${id}`)
-      .then(TaskAction.sync)
   },
 }
 

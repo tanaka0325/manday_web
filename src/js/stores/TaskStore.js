@@ -22,6 +22,12 @@ class TaskStore {
   onAddedTask(task) {
     this.tasks.push(task)
   }
+
+  onDeleteTask(taskToDestroy) {
+    this.tasks = this.tasks.filter((task) => {
+      return task !== taskToDestroy
+    })
+  }
 }
 
 export default alt.createStore(TaskStore, 'TaskStore')

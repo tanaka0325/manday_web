@@ -14,8 +14,9 @@ class PoemActions {
     PoemSource.add(poem)
   }
 
-  deletePoem(id) {
-    PoemSource.delete(id)
+  deletePoem(poem) {
+    PoemSource.delete(poem.id)
+    return poem
   }
 }
 

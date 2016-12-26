@@ -6,7 +6,7 @@ const ReportList = (props) => {
       {props.store.reports.map((report) => {
         return (
           <li key={report.id}>{report.title} : {report.body}
-            <button onClick={() => { props.actions.deleteReport(report.id) }}>
+            <button onClick={() => { props.actions.deleteReport(report) }}>
               delete
             </button>
           </li>

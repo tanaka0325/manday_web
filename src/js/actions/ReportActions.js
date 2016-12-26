@@ -14,8 +14,9 @@ class ReportActions {
     ReportSource.add(report)
   }
 
-  deleteReport(id) {
-    ReportSource.delete(id)
+  deleteReport(report) {
+    ReportSource.delete(report.id)
+    return report
   }
 }
 

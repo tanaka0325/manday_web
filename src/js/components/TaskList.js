@@ -6,7 +6,7 @@ const TaskList = (props) => {
       {props.store.tasks.map((task) => {
         return (
           <li key={task.id}>{task.body}
-            <button onClick={() => { props.actions.deleteTask(task.id) }}>
+            <button onClick={() => { props.actions.deleteTask(task) }}>
               delete
             </button>
           </li>

@@ -14,8 +14,9 @@ class TaskActions {
     TaskSource.add(task)
   }
 
-  deleteTask(id) {
-    TaskSource.delete(id)
+  deleteTask(task) {
+    TaskSource.delete(task.id)
+    return task
   }
 }
 

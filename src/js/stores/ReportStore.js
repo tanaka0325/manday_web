@@ -22,6 +22,12 @@ class ReportStore {
   onAddedReport(report) {
     this.reports.push(report)
   }
+
+  onDeleteReport(reportToDestroy) {
+    this.reports = this.reports.filter((report) => {
+      return report !== reportToDestroy
+    })
+  }
 }
 
 export default alt.createStore(ReportStore, 'ReportStore')

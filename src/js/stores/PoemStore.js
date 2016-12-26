@@ -22,6 +22,12 @@ class PoemStore {
   onAddedPoem(poem) {
     this.poems.push(poem)
   }
+
+  onDeletePoem(poemToDestroy) {
+    this.poems = this.poems.filter((poem) => {
+      return poem !== poemToDestroy
+    })
+  }
 }
 
 export default alt.createStore(PoemStore, 'PoemStore')

@@ -16,7 +16,6 @@ const ReportSource = {
 
   delete: (id) => {
     Api.ajaxDelete(`${API_URL}/${id}`)
-      .then(ReportAction.sync)
   },
 }
 

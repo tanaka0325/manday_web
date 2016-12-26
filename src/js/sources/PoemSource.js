@@ -16,7 +16,6 @@ const PoemSource = {
 
   delete: (id) => {
     Api.ajaxDelete(`${API_URL}/${id}`)
-      .then(PoemAction.sync)
   },
 }
 
