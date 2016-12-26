@@ -14,7 +14,7 @@ const TaskForm = (props) => {
           }
           props.actions.addTask({
             user_id: 1,
-            date: '2016-12-25',
+            date: props.date,
             status: 'not_yet',
             body: input.value,
             priority: 'normal',

@@ -8,7 +8,11 @@ import ReportList from '../components/ReportList'
 
 class Report extends Component {
   componentDidMount() {
-    ReportActions.sync()
+    ReportActions.sync(this.props.store.date)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    ReportActions.sync(nextProps.store.date)
   }
 
   render() {
@@ -17,7 +21,7 @@ class Report extends Component {
         stores={{ store: ReportStore }}
         actions={{ actions: ReportActions }}
       >
-        <ReportForm />
+        <ReportForm date={this.props.store.date} />
         <ReportList />
       </AltContainer>
     )

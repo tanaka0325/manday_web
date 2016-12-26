@@ -15,12 +15,13 @@ const ReportForm = (props) => {
           }
           props.actions.addReport({
             user_id: 1,
-            date: '2016-12-25',
+            date: props.date,
             status: 'published',
             body: inputBody.value,
             title: inputTitle.value,
           })
           inputTitle.value = ''
+          inputBody.value = ''
         }}
       >
         <input

@@ -8,7 +8,11 @@ import PoemList from '../components/PoemList'
 
 class Poem extends Component {
   componentDidMount() {
-    PoemActions.sync()
+    PoemActions.sync(this.props.store.date)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    PoemActions.sync(nextProps.store.date)
   }
 
   render() {
@@ -17,7 +21,7 @@ class Poem extends Component {
         stores={{ store: PoemStore }}
         actions={{ actions: PoemActions }}
       >
-        <PoemForm />
+        <PoemForm date={this.props.store.date} />
         <PoemList />
       </AltContainer>
     )

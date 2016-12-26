@@ -8,7 +8,11 @@ import TaskList from '../components/TaskList'
 
 class Task extends Component {
   componentDidMount() {
-    TaskActions.sync()
+    TaskActions.sync(this.props.store.date)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    TaskActions.sync(nextProps.store.date)
   }
 
   render() {
@@ -17,7 +21,7 @@ class Task extends Component {
         stores={{ store: TaskStore }}
         actions={{ actions: TaskActions }}
       >
-        <TaskForm />
+        <TaskForm date={this.props.store.date} />
         <TaskList />
       </AltContainer>
     )
