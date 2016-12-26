@@ -13,12 +13,13 @@ class Report extends Component {
 
   render() {
     return (
-      <div>
-        <AltContainer stores={{ store: ReportStore }} actions={{ actions: ReportActions }}>
-          <ReportForm />
-          <ReportList />
-        </AltContainer>
-      </div>
+      <AltContainer
+        stores={{ store: ReportStore }}
+        actions={{ actions: ReportActions }}
+      >
+        <ReportForm />
+        <ReportList />
+      </AltContainer>
     )
   }
 }

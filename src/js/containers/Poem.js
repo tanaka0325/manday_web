@@ -13,12 +13,13 @@ class Poem extends Component {
 
   render() {
     return (
-      <div>
-        <AltContainer stores={{ store: PoemStore }} actions={{ actions: PoemActions }}>
-          <PoemForm />
-          <PoemList />
-        </AltContainer>
-      </div>
+      <AltContainer
+        stores={{ store: PoemStore }}
+        actions={{ actions: PoemActions }}
+      >
+        <PoemForm />
+        <PoemList />
+      </AltContainer>
     )
   }
 }

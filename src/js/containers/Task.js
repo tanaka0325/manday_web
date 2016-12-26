@@ -13,12 +13,13 @@ class Task extends Component {
 
   render() {
     return (
-      <div>
-        <AltContainer stores={{ store: TaskStore }} actions={{ actions: TaskActions }}>
-          <TaskForm />
-          <TaskList />
-        </AltContainer>
-      </div>
+      <AltContainer
+        stores={{ store: TaskStore }}
+        actions={{ actions: TaskActions }}
+      >
+        <TaskForm />
+        <TaskList />
+      </AltContainer>
     )
   }
 }
