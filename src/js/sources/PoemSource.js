@@ -1,39 +1,22 @@
-import request from 'superagent'
-
+import Api from '../utils/apiUtils'
 import PoemAction from '../actions/PoemActions'
 
 const API_URL = 'http://localhost:9999/poems'
 
 const PoemSource = {
   fetch: () => {
-    request
-      .get(API_URL)
-      .withCredentials()
-      .end((err, res) => {
-        if (err) { console.log(err) }
-        PoemAction.fetchedPoems(res.body)
-      })
+    Api.ajaxGet(API_URL)
+      .then(PoemAction.fetchedPoems)
   },
 
   add: (poem) => {
-    request
-      .post(API_URL)
-      .withCredentials()
-      .send(poem)
-      .end((err, res) => {
-        if (err) { console.log(err) }
-        PoemAction.addedPoem(res.body)
-      })
+    Api.ajaxPost(API_URL, poem)
+      .then(PoemAction.addedPoem)
   },
 
   delete: (id) => {
-    request
-      .delete(`${API_URL}/${id}`)
-      .withCredentials()
-      .end((err) => {
-        if (err) { console.log(err) }
-        PoemAction.sync()
-      })
+    Api.ajaxDelete(`${API_URL}/${id}`)
+      .then(PoemAction.sync)
   },
 }
 
