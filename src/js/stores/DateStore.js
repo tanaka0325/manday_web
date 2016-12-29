@@ -16,6 +16,10 @@ class DateStore {
   onPrevDate() {
     this.date = moment(this.date).add(-1, 'days').format('YYYY-MM-DD')
   }
+
+  gotoToday() {
+    this.date = moment().format('YYYY-MM-DD')
+  }
 }
 
 export default alt.createStore(DateStore, 'DateStore')

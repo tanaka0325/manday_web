@@ -6,6 +6,7 @@ const Header = (props) => {
       <p onClick={() => { props.actions.prevDate() }}>prev</p>
       <h2>
         {props.store.date}
+        <button onClick={() => { props.actions.gotoToday() }}>today</button>
       </h2>
       <p onClick={() => { props.actions.nextDate() }}>next</p>
     </div>

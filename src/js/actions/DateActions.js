@@ -5,6 +5,7 @@ class DateActions {
     this.generateActions(
       'nextDate',
       'prevDate',
+      'gotoToday',
     )
   }
 }
