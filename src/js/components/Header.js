@@ -3,12 +3,12 @@ import React from 'react'
 const Header = (props) => {
   return (
     <div>
-      <p onClick={() => { props.actions.prevDate() }}>prev</p>
+      <button onClick={() => { props.actions.prevDate() }}>prev</button>
       <h2>
         {props.store.date}
         <button onClick={() => { props.actions.gotoToday() }}>today</button>
       </h2>
-      <p onClick={() => { props.actions.nextDate() }}>next</p>
+      <button onClick={() => { props.actions.nextDate() }}>next</button>
     </div>
   )
 }
