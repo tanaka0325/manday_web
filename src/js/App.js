@@ -2,9 +2,9 @@ import React from 'react'
 import AltContainer from 'alt-container'
 
 import Header from './components/Header'
-import Poem from './containers/Poem'
-import Task from './containers/Task'
-import Report from './containers/Report'
+import PoemContainer from './containers/PoemContainer'
+import TaskContainer from './containers/TaskContainer'
+import ReportContainer from './containers/ReportContainer'
 
 import DateStore from './stores/DateStore'
 import DateActions from './actions/DateActions'
@@ -15,9 +15,9 @@ const App = () => {
       stores={{ store: DateStore }}
     >
       <Header actions={DateActions} />
-      <Poem />
-      <Task />
-      <Report />
+      <PoemContainer />
+      <TaskContainer />
+      <ReportContainer />
     </AltContainer>
   )
 }
