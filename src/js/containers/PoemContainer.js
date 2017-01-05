@@ -6,7 +6,7 @@ import PoemActions from '../actions/PoemActions'
 import PoemForm from '../components/PoemForm'
 import PoemList from '../components/PoemList'
 
-class Poem extends Component {
+class PoemContainer extends Component {
   componentDidMount() {
     PoemActions.sync(this.props.store.date)
   }
@@ -28,4 +28,4 @@ class Poem extends Component {
   }
 }
 
-export default Poem
+export default PoemContainer

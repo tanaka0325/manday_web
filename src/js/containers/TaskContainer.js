@@ -6,7 +6,7 @@ import TaskActions from '../actions/TaskActions'
 import TaskForm from '../components/TaskForm'
 import TaskList from '../components/TaskList'
 
-class Task extends Component {
+class TaskContainer extends Component {
   componentDidMount() {
     TaskActions.sync(this.props.store.date)
   }
@@ -28,4 +28,4 @@ class Task extends Component {
   }
 }
 
-export default Task
+export default TaskContainer

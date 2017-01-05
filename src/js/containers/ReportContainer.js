@@ -6,7 +6,7 @@ import ReportActions from '../actions/ReportActions'
 import ReportForm from '../components/ReportForm'
 import ReportList from '../components/ReportList'
 
-class Report extends Component {
+class ReportContainer extends Component {
   componentDidMount() {
     ReportActions.sync(this.props.store.date)
   }
@@ -28,4 +28,4 @@ class Report extends Component {
   }
 }
 
-export default Report
+export default ReportContainer
