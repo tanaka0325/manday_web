@@ -5,6 +5,7 @@ import Header from './components/Header'
 import PoemContainer from './containers/PoemContainer'
 import TaskContainer from './containers/TaskContainer'
 import ReportContainer from './containers/ReportContainer'
+import StreamContainer from './containers/StreamContainer'
 
 import DateStore from './stores/DateStore'
 import DateActions from './actions/DateActions'
@@ -18,6 +19,7 @@ const App = () => {
       <PoemContainer />
       <TaskContainer />
       <ReportContainer />
+      <StreamContainer />
     </AltContainer>
   )
 }
