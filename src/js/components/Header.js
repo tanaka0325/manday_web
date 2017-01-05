@@ -1,15 +1,32 @@
 import React from 'react'
 
-const Header = (props) => {
+const Header = () => {
   return (
-    <div>
-      <button onClick={() => { props.actions.prevDate() }}>prev</button>
-      <h2>
-        {props.store.date}
-        <button onClick={() => { props.actions.gotoToday() }}>today</button>
-      </h2>
-      <button onClick={() => { props.actions.nextDate() }}>next</button>
-    </div>
+    <section className="hero is-dark is-medium">
+      <header className="nav">
+        <div className="container">
+          <div className="nav-left">
+            <a className="nav-item title">
+              streamer
+            </a>
+          </div>
+          <div className="nav-right nav-menu">
+            <a className="nav-item">
+              <i className="fa fa-search" />
+              検索
+            </a>
+            <a className="nav-item">
+              <i className="fa fa-user-plus" />
+              登録
+            </a>
+            <a className="nav-item">
+              <i className="fa fa-sign-in" />
+              ログイン
+            </a>
+          </div>
+        </div>
+      </header>
+    </section>
   )
 }
 
