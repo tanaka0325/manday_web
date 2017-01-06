@@ -1,22 +1,22 @@
 import Api from '../utils/apiUtils'
 import TaskAction from '../actions/TaskActions'
 
-const API_URL = 'http://localhost:9999/tasks'
+class TaskSource {
+  static API_URL = 'http://localhost:9999/tasks'
 
-const TaskSource = {
-  fetchAt: (date) => {
-    Api.ajaxGet(`${API_URL}/date/${date}`)
+  static fetchAt(date) {
+    Api.ajaxGet(`${this.API_URL}/date/${date}`)
       .then(TaskAction.fetchedTasks)
-  },
+  }
 
-  add: (task) => {
-    Api.ajaxPost(API_URL, task)
+  static add(task) {
+    Api.ajaxPost(this.API_URL, task)
       .then(TaskAction.addedTask)
-  },
+  }
 
-  delete: (id) => {
-    Api.ajaxDelete(`${API_URL}/${id}`)
-  },
+  static delete(id) {
+    Api.ajaxDelete(`${this.API_URL}/${id}`)
+  }
 }
 
 export default TaskSource

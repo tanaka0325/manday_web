@@ -1,22 +1,23 @@
 import Api from '../utils/apiUtils'
 import PoemAction from '../actions/PoemActions'
 
-const API_URL = 'http://localhost:9999/poems'
+class PoemSource {
 
-const PoemSource = {
-  fetchAt: (date) => {
-    Api.ajaxGet(`${API_URL}/date/${date}`)
+  static API_URL = 'http://localhost:9999/poems'
+
+  static fetchAt(date) {
+    Api.ajaxGet(`${this.API_URL}/date/${date}`)
       .then(PoemAction.fetchedPoems)
-  },
+  }
 
-  add: (poem) => {
-    Api.ajaxPost(API_URL, poem)
+  static add(poem) {
+    Api.ajaxPost(this.API_URL, poem)
       .then(PoemAction.addedPoem)
-  },
+  }
 
-  delete: (id) => {
-    Api.ajaxDelete(`${API_URL}/${id}`)
-  },
+  static delete(id) {
+    Api.ajaxDelete(`${this.API_URL}/${id}`)
+  }
 }
 
 export default PoemSource
