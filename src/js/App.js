@@ -14,7 +14,7 @@ const App = () => {
     <AltContainer
       stores={{ store: DateStore }}
     >
-      <Header actions={DateActions} />
+      <Header />
       <Date actions={DateActions} />
       <PoemContainer />
       <TaskContainer />
