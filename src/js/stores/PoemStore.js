@@ -13,10 +13,6 @@ class PoemStore {
     this.poems = poems
   }
 
-  onAddPoem(poem) {
-    this.poems.push(poem)
-  }
-
   onAddedPoem(poem) {
     this.poems.push(poem)
   }
