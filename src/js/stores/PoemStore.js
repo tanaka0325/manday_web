@@ -1,6 +1,5 @@
 import alt from '../alt'
 import PoemActions from '../actions/PoemActions'
-import PoemSource from '../sources/PoemSource'
 
 class PoemStore {
   constructor() {
@@ -9,14 +8,13 @@ class PoemStore {
     this.loading = false
   }
 
-  onSync(date) {
-    this.loading = true
-    PoemSource.fetchAt(date)
-  }
-
   onFetchedPoems(poems) {
     this.loading = false
     this.poems = poems
+  }
+
+  onAddPoem(poem) {
+    this.poems.push(poem)
   }
 
   onAddedPoem(poem) {
