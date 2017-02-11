@@ -80,3 +80,4 @@ Temporary Items
 src/bundle.js
 build/*
 !/build/.keep
+.yarnclean
