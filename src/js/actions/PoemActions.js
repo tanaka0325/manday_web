@@ -4,21 +4,21 @@ import MandaySource from '../sources/MandaySource'
 class PoemActions {
   constructor() {
     this.generateActions(
-      'fetchedPoems',
-      'addedPoem',
+      'fetched',
+      'added',
     )
     this.endpoint = 'poems'
   }
 
   sync(date) {
-    MandaySource.fetchAt(this.endpoint, date, this.fetchedPoems)
+    MandaySource.fetchAt(this.endpoint, date, this.fetched)
   }
 
-  addPoem(poem) {
-    MandaySource.add(this.endpoint, poem, this.addedPoem)
+  add(poem) {
+    MandaySource.add(this.endpoint, poem, this.added)
   }
 
-  deletePoem(poem) {
+  delete(poem) {
     MandaySource.delete(this.endpoint, poem.id)
     return poem
   }

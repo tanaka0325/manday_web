@@ -1,21 +1,25 @@
 import alt from '../alt'
-import TaskSource from '../sources/TaskSource'
+import MandaySource from '../sources/MandaySource'
 
 class TaskActions {
   constructor() {
     this.generateActions(
-      'sync',
-      'fetchedTasks',
-      'addedTask',
+      'fetched',
+      'added',
     )
+    this.endpoint = 'tasks'
   }
 
-  addTask(task) {
-    TaskSource.add(task)
+  sync(date) {
+    MandaySource.fetchAt(this.endpoint, date, this.fetched)
   }
 
-  deleteTask(task) {
-    TaskSource.delete(task.id)
+  add(task) {
+    MandaySource.add(this.endpoint, task, this.added)
+  }
+
+  delete(task) {
+    MandaySource.delete(this.endpoint, task.id)
     return task
   }
 }

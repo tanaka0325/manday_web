@@ -6,7 +6,7 @@ const PoemList = (props) => {
       {props.store.poems.map((poem, i) => {
         return (
           <li key={i}>{poem.body}
-            <button onClick={() => { props.actions.deletePoem(poem) }}>
+            <button onClick={() => { props.actions.delete(poem) }}>
               delete
             </button>
           </li>

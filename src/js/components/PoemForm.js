@@ -12,7 +12,7 @@ const PoemForm = (props) => {
           if (!input.value.trim()) {
             return
           }
-          props.actions.addPoem({
+          props.actions.add({
             user_id: 1,
             date: props.date,
             status: 'published',

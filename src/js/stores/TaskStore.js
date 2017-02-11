@@ -1,6 +1,5 @@
 import alt from '../alt'
 import TaskActions from '../actions/TaskActions'
-import TaskSource from '../sources/TaskSource'
 
 class TaskStore {
   constructor() {
@@ -9,21 +8,16 @@ class TaskStore {
     this.loading = false
   }
 
-  onSync(date) {
-    this.loading = true
-    TaskSource.fetchAt(date)
-  }
-
-  onFetchedTasks(tasks) {
+  onFetched(tasks) {
     this.loading = false
     this.tasks = tasks
   }
 
-  onAddedTask(task) {
+  onAdded(task) {
     this.tasks.push(task)
   }
 
-  onDeleteTask(taskToDestroy) {
+  onDelete(taskToDestroy) {
     this.tasks = this.tasks.filter((task) => {
       return task !== taskToDestroy
     })

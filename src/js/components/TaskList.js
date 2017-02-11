@@ -3,10 +3,10 @@ import React from 'react'
 const TaskList = (props) => {
   return (
     <ul>
-      {props.store.tasks.map((task) => {
+      {props.store.tasks.map((task, i) => {
         return (
-          <li key={task.id}>{task.body}
-            <button onClick={() => { props.actions.deleteTask(task) }}>
+          <li key={i}>{task.body}
+            <button onClick={() => { props.actions.delete(task) }}>
               delete
             </button>
           </li>

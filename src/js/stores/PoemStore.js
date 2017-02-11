@@ -8,16 +8,16 @@ class PoemStore {
     this.loading = false
   }
 
-  onFetchedPoems(poems) {
+  onFetched(poems) {
     this.loading = false
     this.poems = poems
   }
 
-  onAddedPoem(poem) {
+  onAdded(poem) {
     this.poems.push(poem)
   }
 
-  onDeletePoem(poemToDestroy) {
+  onDelete(poemToDestroy) {
     this.poems = this.poems.filter((poem) => {
       return poem !== poemToDestroy
     })
