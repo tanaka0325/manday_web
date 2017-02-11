@@ -7,7 +7,7 @@ const Header = () => {
         <div className="container">
           <div className="nav-left">
             <a className="nav-item title">
-              streamer
+              manday
             </a>
           </div>
           <div className="nav-right nav-menu">
