@@ -3,9 +3,9 @@ import React from 'react'
 const PoemList = (props) => {
   return (
     <ul>
-      {props.store.poems.map((poem) => {
+      {props.store.poems.map((poem, i) => {
         return (
-          <li key={poem.id}>{poem.body}
+          <li key={i}>{poem.body}
             <button onClick={() => { props.actions.deletePoem(poem) }}>
               delete
             </button>
