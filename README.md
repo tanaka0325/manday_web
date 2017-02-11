@@ -1,3 +1,3 @@
-# Stream
+# manday
 
-Stream is to help you write a daily report.
+manday is to help you write a daily report.
