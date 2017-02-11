@@ -1,21 +1,25 @@
 import alt from '../alt'
-import PoemSource from '../sources/PoemSource'
+import MandaySource from '../sources/MandaySource'
 
 class PoemActions {
   constructor() {
     this.generateActions(
-      'sync',
       'fetchedPoems',
       'addedPoem',
     )
+    this.endpoint = 'poems'
+  }
+
+  sync(date) {
+    MandaySource.fetchAt(this.endpoint, date, this.fetchedPoems)
   }
 
   addPoem(poem) {
-    PoemSource.add(poem)
+    MandaySource.add(this.endpoint, poem, this.addedPoem)
   }
 
   deletePoem(poem) {
-    PoemSource.delete(poem.id)
+    MandaySource.delete(this.endpoint, poem.id)
     return poem
   }
 }
