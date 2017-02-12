@@ -16,8 +16,8 @@ const App = () => {
     >
       <Header />
       <Date actions={DateActions} />
-      <PoemContainer />
       <TaskContainer />
+      <PoemContainer />
     </AltContainer>
   )
 }

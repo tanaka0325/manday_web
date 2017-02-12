@@ -1,15 +1,13 @@
 import React from 'react'
 
+import Task from './Task'
+
 const TaskList = (props) => {
   return (
     <ul>
       {props.store.tasks.map((task, i) => {
         return (
-          <li key={i}>{task.body}
-            <button onClick={() => { props.actions.delete(task) }}>
-              delete
-            </button>
-          </li>
+          <Task key={i} task={task} delete={props.actions.delete} />
         )
       })}
     </ul>
