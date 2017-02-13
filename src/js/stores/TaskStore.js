@@ -19,18 +19,14 @@ class TaskStore {
 
   onPlay(playTask) {
     this.tasks = this.tasks.map((task) => {
-      if (task.id === playTask.id) {
-        task.status = 'doing'
-      }
+      if (task.id === playTask.id) { task.status = 'doing' }
       return task
     })
   }
 
   onDone(doneTask) {
     this.tasks = this.tasks.map((task) => {
-      if (task.id === doneTask.id) {
-        task.status = 'done'
-      }
+      if (task.id === doneTask.id) { task.status = 'done' }
       return task
     })
   }
