@@ -5,9 +5,16 @@ import Task from './Task'
 const TaskList = (props) => {
   return (
     <ul>
-      {props.store.tasks.map((task, i) => {
+      {props.tasks.map((task, i) => {
         return (
-          <Task key={i} task={task} delete={props.actions.delete} />
+          <Task
+            key={i}
+            task={task}
+            delete={props.actions.delete}
+            // play={props.actions.play}
+            // done={props.actions.done}
+            // move={props.actions.move}
+          />
         )
       })}
     </ul>
