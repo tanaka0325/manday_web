@@ -23,14 +23,11 @@ class TaskContainer extends Component {
     const tasksDoing = this.props.tasks.filter((task) => { return (task.status === 'doing') })
     const tasksDone = this.props.tasks.filter((task) => { return (task.status === 'done') })
     return (
-      <div className="content">
-        <TaskForm actions={TaskActions} date={this.props.store.date} />
-        <h3>todo</h3>
-        <TaskList actions={TaskActions} tasks={tasksNotYet} />
-        <h3>doing</h3>
-        <TaskList actions={TaskActions} tasks={tasksDoing} />
-        <h3>done</h3>
-        <TaskList actions={TaskActions} tasks={tasksDone} />
+      <div>
+        <TaskForm actions={TaskActions} date={this.props.date} />
+        <TaskList actions={TaskActions} tasks={tasksNotYet} label="TODO" />
+        <TaskList actions={TaskActions} tasks={tasksDoing} label="DOING" />
+        <TaskList actions={TaskActions} tasks={tasksDone} label="DONE" />
       </div>
     )
   }
