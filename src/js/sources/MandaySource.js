@@ -9,13 +9,17 @@ class MandaySource {
       .then(callback)
   }
 
-  static add(endpoint, poem, callback) {
-    Api.ajaxPost(`${this.API_URL}/${endpoint}`, poem)
+  static add(endpoint, data, callback) {
+    Api.ajaxPost(`${this.API_URL}/${endpoint}`, data)
       .then(callback)
   }
 
   static delete(endpoint, id) {
     Api.ajaxDelete(`${this.API_URL}/${endpoint}/${id}`)
+  }
+
+  static update(endpoint, id, params) {
+    Api.ajaxPatch(`${this.API_URL}/${endpoint}/${id}`, params)
   }
 }
 

@@ -17,6 +17,24 @@ class TaskStore {
     this.tasks.push(task)
   }
 
+  onPlay(playTask) {
+    this.tasks = this.tasks.map((task) => {
+      if (task.id === playTask.id) {
+        task.status = 'doing'
+      }
+      return task
+    })
+  }
+
+  onDone(doneTask) {
+    this.tasks = this.tasks.map((task) => {
+      if (task.id === doneTask.id) {
+        task.status = 'done'
+      }
+      return task
+    })
+  }
+
   onDelete(taskToDestroy) {
     this.tasks = this.tasks.filter((task) => {
       return task !== taskToDestroy

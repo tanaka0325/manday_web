@@ -10,10 +10,7 @@ const TaskList = (props) => {
           <Task
             key={i}
             task={task}
-            delete={props.actions.delete}
-            // play={props.actions.play}
-            // done={props.actions.done}
-            // move={props.actions.move}
+            actions={props.actions}
           />
         )
       })}

@@ -18,6 +18,18 @@ class TaskActions {
     MandaySource.add(this.endpoint, task, this.added)
   }
 
+  play(task) {
+    const params = { status: 'doing' }
+    MandaySource.update(this.endpoint, task.id, params)
+    return task
+  }
+
+  done(task) {
+    const params = { status: 'done' }
+    MandaySource.update(this.endpoint, task.id, params)
+    return task
+  }
+
   delete(task) {
     MandaySource.delete(this.endpoint, task.id)
     return task
