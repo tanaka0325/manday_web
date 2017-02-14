@@ -1,18 +1,26 @@
 import React, { Component } from 'react'
 import AltContainer from 'alt-container'
 
+import DateStore from '../stores/DateStore'
 import PoemStore from '../stores/PoemStore'
 import PoemActions from '../actions/PoemActions'
 import PoemForm from '../components/PoemForm'
 import PoemList from '../components/PoemList'
 
 class PoemContainer extends Component {
-  componentDidMount() {
-    PoemActions.sync(this.props.store.date)
+  static getStores() {
+    return [DateStore, PoemStore]
   }
 
-  componentWillReceiveProps(nextProps) {
-    PoemActions.sync(nextProps.store.date)
+  static getPropsFromStores() {
+    return {
+      ...DateStore.getState(),
+      ...PoemStore.getState(),
+    }
+  }
+
+  componentDidMount() {
+    PoemActions.sync(this.props.date)
   }
 
   render() {
@@ -21,7 +29,7 @@ class PoemContainer extends Component {
         stores={{ store: PoemStore }}
         actions={{ actions: PoemActions }}
       >
-        <PoemForm date={this.props.store.date} />
+        <PoemForm date={this.props.date} />
         <PoemList />
       </AltContainer>
     )

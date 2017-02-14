@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import connectToStores from 'alt-utils/lib/connectToStores'
 
+import DateStore from '../stores/DateStore'
 import TaskStore from '../stores/TaskStore'
 import TaskActions from '../actions/TaskActions'
 import TaskForm from '../components/TaskForm'
@@ -8,14 +9,18 @@ import TaskList from '../components/TaskList'
 
 class TaskContainer extends Component {
   static getStores() {
-    return [TaskStore]
+    return [DateStore, TaskStore]
   }
+
   static getPropsFromStores() {
-    return TaskStore.getState()
+    return {
+      ...DateStore.getState(),
+      ...TaskStore.getState(),
+    }
   }
 
   componentDidMount() {
-    TaskActions.sync(this.props.store.date)
+    TaskActions.sync(this.props.date)
   }
 
   render() {
