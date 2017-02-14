@@ -21,7 +21,7 @@ const PoemForm = (props) => {
           input.value = ''
         }}
       >
-        <input
+        <textarea
           ref={(node) => {
             input = node
           }}
