@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AltContainer from 'alt-container'
+import connectToStores from 'alt-utils/lib/connectToStores'
 
 import DateStore from '../stores/DateStore'
 import PoemStore from '../stores/PoemStore'
@@ -36,4 +37,4 @@ class PoemContainer extends Component {
   }
 }
 
-export default PoemContainer
+export default connectToStores(PoemContainer)
