@@ -11,14 +11,17 @@ class DateStore {
 
   onNextDate() {
     this.date = moment(this.date).add(1, 'days').format('YYYY-MM-DD')
+    DateActions.changeAppDate(this.date)
   }
 
   onPrevDate() {
     this.date = moment(this.date).add(-1, 'days').format('YYYY-MM-DD')
+    DateActions.changeAppDate(this.date)
   }
 
   gotoToday() {
     this.date = moment().format('YYYY-MM-DD')
+    DateActions.changeAppDate(this.date)
   }
 }
 
