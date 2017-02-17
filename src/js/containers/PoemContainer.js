@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
-import AltContainer from 'alt-container'
 import connectToStores from 'alt-utils/lib/connectToStores'
 
 import DateStore from '../stores/DateStore'
 import PoemStore from '../stores/PoemStore'
 import PoemActions from '../actions/PoemActions'
-import PoemForm from '../components/PoemForm'
 import PoemList from '../components/PoemList'
 import PoemEditor from '../components/PoemEditor'
 
@@ -50,17 +48,17 @@ class PoemContainer extends Component {
 
   render() {
     return (
-      <AltContainer
-        stores={{ store: PoemStore }}
-        actions={{ actions: PoemActions }}
-      >
-        <PoemEditor
-          value={this.state.text}
-          handleEditorChange={this.handleChange}
-          handleEditorSubmit={this.handleSubmit}
-        />
-        <PoemList />
-      </AltContainer>
+      <article className="message">
+        <div className="message-header">Poem</div>
+        <div className="message-body">
+          <PoemEditor
+            value={this.state.text}
+            handleEditorChange={this.handleChange}
+            handleEditorSubmit={this.handleSubmit}
+          />
+          <PoemList actions={PoemActions} poems={this.props.poems} />
+        </div>
+      </article>
     )
   }
 }

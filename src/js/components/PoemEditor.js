@@ -8,7 +8,7 @@ const PoemEditor = (props) => {
   }
 
   return (
-    <div>
+    <div className="poem-form">
       <SimpleMDE
         onChange={props.handleEditorChange}
         value={props.value}
@@ -21,7 +21,9 @@ const PoemEditor = (props) => {
         }}
         addKeyMaps={extraKeys}
       />
-      <button onClick={props.handleEditorSubmit}>post</button>
+      <div className="post-button">
+        <a onClick={props.handleEditorSubmit} className="button is-dark">post</a>
+      </div>
     </div>
   )
 }
