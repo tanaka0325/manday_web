@@ -3774,9 +3774,9 @@ react-dom@^15.4.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
-react-simplemde-editor@^3.6.10:
+"react-simplemde-editor@https://github.com/tanaka0325/react-simplemde-editor.git":
   version "3.6.10"
-  resolved "https://registry.yarnpkg.com/react-simplemde-editor/-/react-simplemde-editor-3.6.10.tgz#764b7903e54e58422373ed112437f8c29e5bd6af"
+  resolved "https://github.com/tanaka0325/react-simplemde-editor.git#64dd2256f39c0f75e2013a6724e2270c3b9c9379"
   dependencies:
     react "^0.14.2"
     simplemde "^1.11.2"
