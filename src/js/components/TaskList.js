@@ -4,20 +4,24 @@ import Task from './Task'
 
 const TaskList = (props) => {
   return (
-    <div>
-      <h3>{props.label}</h3>
-      <ul>
-        {props.tasks.map((task, i) => {
-          return (
-            <Task
-              key={i}
-              task={task}
-              actions={props.actions}
-            />
-          )
-        })}
-      </ul>
-    </div>
+    <article className={`message ${props.cls}`}>
+      <h3 className="message-header">{props.label}</h3>
+      <div className="message-body">
+        <table className="table">
+          <tbody>
+            {props.tasks.map((task, i) => {
+              return (
+                <Task
+                  key={i}
+                  task={task}
+                  actions={props.actions}
+                />
+              )
+            })}
+        </tbody>
+        </table>
+      </div>
+    </article>
   )
 }
 
