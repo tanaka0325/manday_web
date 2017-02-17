@@ -4,6 +4,9 @@ const Task = (props) => {
   return (
     <li>
       {props.task.body}
+      <button onClick={() => { props.actions.unplay(props.task) }}>
+        unplay
+      </button>
       <button onClick={() => { props.actions.play(props.task) }}>
         play
       </button>

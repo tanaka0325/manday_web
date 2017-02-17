@@ -24,6 +24,12 @@ class TaskActions {
     return task
   }
 
+  unplay(task) {
+    const params = { status: 'not_yet' }
+    MandaySource.update(this.endpoint, task.id, params)
+    return task
+  }
+
   done(task) {
     const params = { status: 'done' }
     MandaySource.update(this.endpoint, task.id, params)

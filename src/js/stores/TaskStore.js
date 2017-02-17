@@ -24,6 +24,13 @@ class TaskStore {
     })
   }
 
+  onUnplay(playTask) {
+    this.tasks = this.tasks.map((task) => {
+      if (task.id === playTask.id) { task.status = 'not_yet' }
+      return task
+    })
+  }
+
   onDone(doneTask) {
     this.tasks = this.tasks.map((task) => {
       if (task.id === doneTask.id) { task.status = 'done' }
