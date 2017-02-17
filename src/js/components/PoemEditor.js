@@ -5,6 +5,9 @@ const PoemEditor = (props) => {
   const extraKeys = {
     // 'Ctrl-Enter': () => { props.handleEditorSubmit() },
     'Cmd-Enter': () => { props.handleEditorSubmit() },
+    'Esc': () => {
+      document.activeElement.blur()
+    }
   }
 
   return (
