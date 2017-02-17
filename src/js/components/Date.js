@@ -1,10 +1,20 @@
 import React from 'react'
+import moment from 'moment'
 
 const Date = (props) => {
   const styles = {
     section: {
       padding: '20px 0',
     },
+  }
+
+  const today = moment().format('YYYY-MM-DD')
+  const displayDate = () => {
+    if (props.store.date !== today) {
+      return <p><a onClick={() => { props.actions.gotoToday() }}>{props.store.date}</a></p>
+    } else {
+      return <p>{props.store.date}</p>
+    }
   }
 
   return (
@@ -15,8 +25,7 @@ const Date = (props) => {
             <button onClick={() => { props.actions.prevDate() }}>◀</button>
           </div>
           <div className="column is-4 has-text-centered">
-            {props.store.date}
-            <button onClick={() => { props.actions.gotoToday() }}>today</button>
+            {displayDate()}
           </div>
           <div className="column is-4 has-text-left">
             <button onClick={() => { props.actions.nextDate() }}>▶</button>
