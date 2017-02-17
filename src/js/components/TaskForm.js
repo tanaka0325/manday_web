@@ -4,14 +4,11 @@ const TaskForm = (props) => {
   let input
 
   return (
-    <div>
-      <h2>Task form</h2>
+    <div className="task-form">
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          if (!input.value.trim()) {
-            return
-          }
+          if (!input.value.trim()) { return }
           props.actions.add({
             user_id: 1,
             date: props.date,
@@ -22,12 +19,14 @@ const TaskForm = (props) => {
           input.value = ''
         }}
       >
-        <input
-          ref={(node) => {
-            input = node
-          }}
-        />
-        <button type="submit">post</button>
+        <div className="control is-grouped">
+          <p className="control is-expanded">
+            <input ref={(node) => { input = node }} className="input" />
+          </p>
+          <p className="control">
+            <button type="submit" className="button is-dark">Add</button>
+          </p>
+        </div>
       </form>
     </div>
   )
