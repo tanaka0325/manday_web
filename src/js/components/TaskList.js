@@ -5,7 +5,9 @@ import Task from './Task'
 const TaskList = (props) => {
   return (
     <article className={`message ${props.cls}`}>
-      <h3 className="message-header">{props.label}</h3>
+      <div className="message-header">
+        <p>{props.label}</p>
+      </div>
       <div className="message-body">
         <table className="table">
           <tbody>
