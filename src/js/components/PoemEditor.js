@@ -12,7 +12,6 @@ const PoemEditor = (props) => {
       <SimpleMDE
         onChange={props.handleEditorChange}
         value={props.value}
-        extraKeys={extraKeys}
         options={{
           autofocus: false,
           spellChecker: false,
@@ -20,6 +19,7 @@ const PoemEditor = (props) => {
           status: false,
           toolbar: false,
         }}
+        addKeyMaps={extraKeys}
       />
       <button onClick={props.handleEditorSubmit}>post</button>
     </div>
