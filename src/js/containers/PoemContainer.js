@@ -7,6 +7,7 @@ import PoemStore from '../stores/PoemStore'
 import PoemActions from '../actions/PoemActions'
 import PoemForm from '../components/PoemForm'
 import PoemList from '../components/PoemList'
+import PoemEditor from '../components/PoemEditor'
 
 class PoemContainer extends Component {
   static getStores() {
@@ -20,8 +21,31 @@ class PoemContainer extends Component {
     }
   }
 
+  constructor() {
+    super()
+    this.state = { text: '' }
+  }
+
   componentDidMount() {
     PoemActions.sync(this.props.date)
+  }
+
+  handleChange = (value) => {
+    this.setState({ text: value })
+  }
+
+  handleSubmit = () => {
+    if (!this.state.text.trim()) {
+      console.log('no text')
+      return
+    }
+    PoemActions.add({
+      user_id: 1,
+      date: this.props.date,
+      status: 'published',
+      body: this.state.text,
+    })
+    this.setState({ text: ' ' })
   }
 
   render() {
@@ -30,7 +54,11 @@ class PoemContainer extends Component {
         stores={{ store: PoemStore }}
         actions={{ actions: PoemActions }}
       >
-        <PoemForm date={this.props.date} />
+        <PoemEditor
+          value={this.state.text}
+          handleEditorChange={this.handleChange}
+          handleEditorSubmit={this.handleSubmit}
+        />
         <PoemList />
       </AltContainer>
     )
