@@ -38,6 +38,12 @@ class TaskStore {
     })
   }
 
+  onExportToday(exportTask) {
+    this.tasks = this.tasks.filter((task) => {
+      return task.id !== exportTask.id
+    })
+  }
+
   onDelete(taskToDestroy) {
     this.tasks = this.tasks.filter((task) => {
       return task !== taskToDestroy

@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 import alt from '../alt'
 import MandaySource from '../sources/MandaySource'
 
@@ -32,6 +34,13 @@ class TaskActions {
 
   done(task) {
     const params = { status: 'done' }
+    MandaySource.update(this.endpoint, task.id, params)
+    return task
+  }
+
+  exportToday(task) {
+    const today = moment().format('YYYY-MM-DD')
+    const params = { date: today }
     MandaySource.update(this.endpoint, task.id, params)
     return task
   }

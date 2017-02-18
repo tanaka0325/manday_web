@@ -4,6 +4,7 @@ const Task = (props) => {
   return (
     <tr>
       <td>{props.task.body}</td>
+      <td><button onClick={() => { props.actions.exportToday(props.task) }}>exportToday</button></td>
       <td><button onClick={() => { props.actions.unplay(props.task) }}>unplay</button></td>
       <td><button onClick={() => { props.actions.play(props.task) }}>play</button></td>
       <td><button onClick={() => { props.actions.done(props.task) }}>done</button></td>
