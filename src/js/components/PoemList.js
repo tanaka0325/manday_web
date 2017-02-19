@@ -1,13 +1,13 @@
 import React from 'react'
 
+import Poem from './Poem'
+
 const PoemList = (props) => {
   return (
     <div>
       {props.poems.map((poem, i) => {
         return (
-          <p key={i}>{poem.body}
-            <button onClick={() => { props.actions.delete(poem) }}>delete</button>
-          </p>
+          <Poem key={i} poem={poem} actions={props.actions} />
         )
       })}
     </div>
