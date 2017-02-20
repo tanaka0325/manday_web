@@ -1,18 +1,21 @@
 import React from 'react'
 import SimpleMDE from 'react-simplemde-editor'
+import {} from 'codemirror/mode/markdown/markdown'
+// import {} from 'codemirror/mode/gfm/gfm'
+import {} from 'codemirror/addon/edit/continuelist'
 
 const PoemEditor = (props) => {
   const extraKeys = {
-    // 'Ctrl-Enter': () => { props.handleEditorSubmit() },
+    'Ctrl-Enter': () => { props.handleEditorSubmit() },
     'Cmd-Enter': () => { props.handleEditorSubmit() },
-    'Esc': () => {
-      document.activeElement.blur()
-    }
+    Esc: () => { document.activeElement.blur() },
+    Enter: 'newlineAndIndentContinueMarkdownList',
   }
 
   return (
     <div className="poem-form">
       <SimpleMDE
+        // mode="gfm"
         onChange={props.handleEditorChange}
         value={props.value}
         options={{
@@ -22,7 +25,7 @@ const PoemEditor = (props) => {
           status: false,
           toolbar: false,
         }}
-        addKeyMaps={extraKeys}
+        extraKeys={extraKeys}
       />
       <div className="post-button">
         <a onClick={props.handleEditorSubmit} className="button is-dark">post</a>
