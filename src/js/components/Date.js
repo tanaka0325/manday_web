@@ -2,12 +2,6 @@ import React from 'react'
 import moment from 'moment'
 
 const Date = (props) => {
-  const styles = {
-    section: {
-      padding: '20px 0',
-    },
-  }
-
   const today = moment().format('YYYY-MM-DD')
   const displayDate = () => {
     if (props.store.date !== today) {
@@ -18,7 +12,7 @@ const Date = (props) => {
   }
 
   return (
-    <section style={styles.section}>
+    <section className="date">
       <div className="container content is-large">
         <div className="columns">
           <div className="column is-4 has-text-right">

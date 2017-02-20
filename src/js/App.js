@@ -16,7 +16,7 @@ const App = () => {
         <Header />
         <Date actions={DateActions} />
       </AltContainer>
-      <section className="section">
+      <section className="section main">
         <div className="columns">
           <div className="column">
             <div className="content">

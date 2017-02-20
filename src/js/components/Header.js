@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <section className="hero is-dark is-medium">
+    <section className="hero is-medium header">
       <header className="nav">
         <div className="container">
           <div className="nav-left">
