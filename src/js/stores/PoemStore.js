@@ -10,11 +10,13 @@ class PoemStore {
 
   onFetched(poems) {
     this.loading = false
-    this.poems = poems
+    // this.poems = poems
+    this.poems = poems.reverse()
   }
 
   onAdded(poem) {
-    this.poems.push(poem)
+    // this.poems.push(poem)
+    this.poems.unshift(poem)
   }
 
   onDelete(poemToDestroy) {
