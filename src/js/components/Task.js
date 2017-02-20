@@ -4,11 +4,26 @@ const Task = (props) => {
   return (
     <tr>
       <td>{props.task.body}</td>
-      <td><button onClick={() => { props.actions.exportToday(props.task) }}>exportToday</button></td>
-      <td><button onClick={() => { props.actions.unplay(props.task) }}>unplay</button></td>
-      <td><button onClick={() => { props.actions.play(props.task) }}>play</button></td>
-      <td><button onClick={() => { props.actions.done(props.task) }}>done</button></td>
-      <td><button onClick={() => { props.actions.delete(props.task) }}>delete</button></td>
+      <td className="is-icon" onClick={() => { props.actions.exportToday(props.task) }}>
+        {/* <button>exportToday</button> */}
+        <i className="fa fa-share" />
+      </td>
+      <td className="is-icon" onClick={() => { props.actions.unplay(props.task) }}>
+        {/* <button>unplay</button> */}
+        <i className="fa fa-pause" />
+      </td>
+      <td className="is-icon" onClick={() => { props.actions.play(props.task) }}>
+        {/* <button>play</button> */}
+        <i className="fa fa-play" />
+      </td>
+      <td className="is-icon" onClick={() => { props.actions.done(props.task) }}>
+        {/* <button>done</button> */}
+        <i className="fa fa-check" />
+      </td>
+      <td className="is-icon" onClick={() => { props.actions.delete(props.task) }}>
+        {/* <button>delete</button> */}
+        <i className="fa fa-trash" />
+      </td>
     </tr>
   )
 }
