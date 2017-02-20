@@ -16,13 +16,15 @@ const Date = (props) => {
       <div className="container content is-large">
         <div className="columns">
           <div className="column is-4 has-text-right">
-            <button onClick={() => { props.actions.prevDate() }}>◀</button>
+            {/* <button onClick={() => { props.actions.prevDate() }}>◀</button> */}
+            <a onClick={() => { props.actions.prevDate() }}>◀</a>
           </div>
           <div className="column is-4 has-text-centered">
             {displayDate()}
           </div>
           <div className="column is-4 has-text-left">
-            <button onClick={() => { props.actions.nextDate() }}>▶</button>
+            {/* <button onClick={() => { props.actions.nextDate() }}>▶</button> */}
+            <a onClick={() => { props.actions.nextDate() }}>▶</a>
           </div>
         </div>
       </div>
