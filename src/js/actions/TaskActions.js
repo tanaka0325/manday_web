@@ -45,6 +45,19 @@ class TaskActions {
     return task
   }
 
+  star(task) {
+    const params = { priority: 'high' }
+    MandaySource.update(this.endpoint, task.id, params)
+    return task
+  }
+
+  unStar(task) {
+    const params = { priority: 'normal' }
+    MandaySource.update(this.endpoint, task.id, params)
+    return task
+  }
+
+
   delete(task) {
     MandaySource.delete(this.endpoint, task.id)
     return task

@@ -44,6 +44,20 @@ class TaskStore {
     })
   }
 
+  onStar(staredTask) {
+    this.tasks = this.tasks.map((task) => {
+      if (task.id === staredTask.id) { task.priority = 'high' }
+      return task
+    })
+  }
+
+  onUnStar(unStaredTask) {
+    this.tasks = this.tasks.map((task) => {
+      if (task.id === unStaredTask.id) { task.priority = 'normal' }
+      return task
+    })
+  }
+
   onDelete(taskToDestroy) {
     this.tasks = this.tasks.filter((task) => {
       return task !== taskToDestroy
