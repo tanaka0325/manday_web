@@ -5,7 +5,6 @@ import moment from 'moment'
 const Poem = (props) => {
   const md = new MarkdownIt()
   const poemHtml = md.render(props.poem.body)
-  console.log(moment(props.poem.created_at).format('HH:mm:ss'))
 
   return (
     <article className="message poem">
