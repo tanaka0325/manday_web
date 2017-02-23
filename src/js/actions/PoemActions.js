@@ -6,6 +6,8 @@ class PoemActions {
     this.generateActions(
       'fetched',
       'added',
+      'openModal',
+      'closeModal',
     )
     this.endpoint = 'poems'
   }
@@ -22,6 +24,13 @@ class PoemActions {
     MandaySource.delete(this.endpoint, poem.id)
     return poem
   }
+
+  edit(id, body) {
+    const params = { body }
+    MandaySource.update(this.endpoint, id, params)
+    return { id, body }
+  }
+
 }
 
 export default alt.createActions(PoemActions)

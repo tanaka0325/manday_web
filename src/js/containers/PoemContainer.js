@@ -7,6 +7,8 @@ import PoemActions from '../actions/PoemActions'
 import PoemList from '../components/PoemList'
 import PoemEditor from '../components/PoemEditor'
 
+import PoemEditModal from '../components/PoemEditModal'
+
 class PoemContainer extends Component {
   static getStores() {
     return [DateStore, PoemStore]
@@ -47,6 +49,7 @@ class PoemContainer extends Component {
   }
 
   render() {
+    const modal = (this.props.is_modal) ? <PoemEditModal poem={this.props.edit_poem} actions={PoemActions} handleEditorChange={this.handleChange} handleEditorSubmit={this.handleSubmit} /> : false ;
     return (
       <article className="message">
         <div className="message-header">Poem</div>
@@ -58,6 +61,7 @@ class PoemContainer extends Component {
           />
           <PoemList actions={PoemActions} poems={this.props.poems} />
         </div>
+        {modal}
       </article>
     )
   }

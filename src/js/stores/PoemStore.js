@@ -6,6 +6,8 @@ class PoemStore {
     this.bindActions(PoemActions)
     this.poems = []
     this.loading = false
+    this.is_modal = false
+    this.edit_poem = ''
   }
 
   onFetched(poems) {
@@ -22,6 +24,24 @@ class PoemStore {
   onDelete(poemToDestroy) {
     this.poems = this.poems.filter((poem) => {
       return poem !== poemToDestroy
+    })
+  }
+
+  onOpenModal(poem) {
+    this.edit_poem = poem
+    this.is_modal = true
+  }
+
+  onCloseModal() {
+    this.edit_poem = ''
+    this.is_modal = false
+  }
+
+  onEdit(obj) {
+    this.poems = this.poems.map((poem) => {
+      if (poem.id === obj.id) { poem.body = obj.body }
+      this.is_modal = false
+      return poem
     })
   }
 }

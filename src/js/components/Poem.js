@@ -12,8 +12,9 @@ const Poem = (props) => {
         <p dangerouslySetInnerHTML={{ __html: poemHtml }} />
         {/* <small>{moment(props.poem.created_at).format('HH:mm:ss')}</small> */}
         <small className="time">{moment(props.poem.created_at).fromNow()}</small>
-        <br/>
+        <br />
         <button onClick={() => { props.actions.delete(props.poem) }}>delete</button>
+        <button onClick={() => { props.actions.openModal(props.poem) }}>edit</button>
       </div>
     </article>
   )
