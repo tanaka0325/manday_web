@@ -18,12 +18,12 @@ const App = () => {
       </AltContainer>
       <section className="section main">
         <div className="columns">
-          <div className="column">
+          <div className="column is-half">
             <div className="content">
               <TaskContainer />
             </div>
           </div>
-          <div className="column">
+          <div className="column is-half">
             <div className="content">
               <PoemContainer />
             </div>
