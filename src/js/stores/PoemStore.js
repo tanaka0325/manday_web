@@ -1,12 +1,15 @@
 import alt from '../alt'
 import PoemActions from '../actions/PoemActions'
+import PanelActions from '../actions/PanelActions'
 
 class PoemStore {
   constructor() {
     this.bindActions(PoemActions)
+    this.bindActions(PanelActions)
     this.poems = []
     this.loading = false
     this.is_modal = false
+    this.is_expand = true
     this.edit_poem = ''
   }
 
@@ -43,6 +46,10 @@ class PoemStore {
       this.is_modal = false
       return poem
     })
+  }
+
+  onToggleExpand() {
+    this.is_expand = this.is_expand ? false : true
   }
 }
 
