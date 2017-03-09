@@ -19,14 +19,10 @@ const App = () => {
       <section className="section main">
         <div className="columns">
           <div className="column is-half">
-            <div className="content">
-              <TaskContainer />
-            </div>
+            <TaskContainer />
           </div>
           <div className="column is-half">
-            <div className="content">
-              <PoemContainer />
-            </div>
+            <PoemContainer />
           </div>
         </div>
       </section>
