@@ -40,7 +40,7 @@ class TaskActions {
 
   exportToday(task) {
     const today = moment().format('YYYY-MM-DD')
-    const params = { date: today }
+    const params = { date: today, status: 'not_yet' }
     MandaySource.update(this.endpoint, task.id, params)
     return task
   }
