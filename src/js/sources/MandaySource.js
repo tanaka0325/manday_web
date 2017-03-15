@@ -2,7 +2,7 @@ import Api from '../utils/apiUtils'
 
 class MandaySource {
 
-  static API_URL = 'http://localhost:9999'
+  static API_URL = 'http://localhost:8888'
 
   static fetchAt(endpoint, date, callback) {
     Api.ajaxGet(`${this.API_URL}/${endpoint}/date/${date}`)
