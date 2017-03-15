@@ -8,7 +8,7 @@ const Poem = (props) => {
 
   return (
     <article className="message poem">
-      <div className="message-body">
+      <div className="message-body content">
         <p dangerouslySetInnerHTML={{ __html: poemHtml }} />
         {/* <small>{moment(props.poem.created_at).format('HH:mm:ss')}</small> */}
         <small className="time">{moment(props.poem.created_at).fromNow()}</small>
